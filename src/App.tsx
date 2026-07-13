@@ -1,6 +1,12 @@
 import heroImg from './assets/personal-hero.png'
 
-const navItems = ['Work', 'Systems', 'Stack', 'Contact']
+const navItems = [
+  { label: 'Work', href: '#work' },
+  { label: 'Systems', href: '#systems' },
+  { label: 'Stack', href: '#stack' },
+  { label: 'Contact', href: '#contact' },
+]
+
 const frameClass = 'mx-auto max-w-[1600px]'
 const mStripeClass =
   'bg-[linear-gradient(90deg,#0066b1_0_33.333%,#1c69d4_33.333%_66.666%,#e22718_66.666%_100%)]'
@@ -47,11 +53,11 @@ function App() {
           <div className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.href}
+                href={item.href}
                 className="text-sm font-light text-[#bbbbbb] transition hover:text-white"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
@@ -79,7 +85,7 @@ function App() {
           <div className="max-w-4xl">
             <div className={`${mStripeClass} mb-8 h-1 w-72 max-w-full`} aria-hidden="true" />
             <p className="mb-5 text-sm font-bold uppercase tracking-[1.5px] text-[#e6e6e6]">
-              Personal Web / Frontend Engineering
+              JESDX / Personal Web / Frontend Engineering
             </p>
             <h1 className="max-w-4xl text-5xl font-black uppercase leading-[0.98] tracking-0 md:text-7xl lg:text-8xl">
               Build Fast.
@@ -92,6 +98,9 @@ function App() {
               I craft React interfaces with cinematic restraint, engineered layout,
               and production-grade TypeScript. A personal surface for work, systems,
               and experiments.
+            </p>
+            <p lang="th" className="mt-4 font-['Prompt'] text-sm font-light leading-7 text-[#8f8f8f]">
+              พื้นที่ทดลองของระบบส่วนตัวที่กำลังโตเป็น personal ERP.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
